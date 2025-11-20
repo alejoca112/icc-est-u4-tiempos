@@ -2,40 +2,47 @@ package models;
 
 public class Results {
 
-
-    private int sampleSize;
+    // CAMBIO 1: Ahora sampleSize es String para guardar el texto "Imprimir: 1000"
+    private String sampleSize; 
     private String funtionName;
-    private double  timeResult;
-    public Results(int sampleSize, String funtionName, double timeResult) {
-        this.sampleSize = sampleSize;
+    private double timeResult;
+
+    // CAMBIO 2: El constructor ahora recibe (Nombre, Tamaño, Tiempo) en ese orden
+    // y acepta Strings en los dos primeros.
+    public Results(String funtionName, String sampleSize, double timeResult) {
         this.funtionName = funtionName;
+        this.sampleSize = sampleSize;
         this.timeResult = timeResult;
     }
-    public int getSampleSize() {
+
+    public String getSampleSize() {
         return sampleSize;
     }
-    public void setSampleSize(int sampleSize) {
+
+    public void setSampleSize(String sampleSize) {
         this.sampleSize = sampleSize;
     }
+
     public String getFuntionName() {
         return funtionName;
     }
+
     public void setFuntionName(String funtionName) {
         this.funtionName = funtionName;
     }
+
     public double getTimeResult() {
-        return  timeResult;
+        return timeResult;
     }
+
     public void setTimeResult(double timeResult) {
         this.timeResult = timeResult;
     }
+
     @Override
     public String toString() {
-        return "[ La funcion: " + funtionName + ", se ejecuto: " + sampleSize + " veces "
-        + " tuvo una duracion de: " + timeResult + " segundos" + " ]";
-                
+        // Ajusté el toString para que se lea bien con los nuevos datos
+        return "[ " + funtionName + ", " + sampleSize + ", Duración: " + timeResult + " segundos ]";
     }
-
-    
-    }
+}
 

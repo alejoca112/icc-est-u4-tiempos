@@ -37,7 +37,7 @@ public class App {
         long fin_millis = System.currentTimeMillis();
         System.out.println("Tiempo transcurrido: " + (fin_millis - inicio_millis) + " nanosegundos");
         /* */
-        int[] originalArray = generate(500000);
+        int[] originalArray = generate(200000);
 
         int[] array1000 = new int[1000];
         System.arraycopy(originalArray, 0, array1000, 0, 1000);
@@ -51,11 +51,11 @@ public class App {
         int[] array100000 = new int[100000];
         System.arraycopy(originalArray, 0, array100000, 0, 100000);
 
-        int[] array250000 = new int[250000];
-        System.arraycopy(originalArray, 0, array250000, 0, 250000);
+        int[] array180000 = new int[180000];
+        System.arraycopy(originalArray, 0, array180000, 0, 180000);
 
 
-        int[][] arrays = {array1000, array5000, array10000, array100000, array250000, originalArray};
+        int[][] arrays = {array1000, array5000, array10000, array100000, array180000, originalArray};
         SortMethods sorter = new SortMethods();
         for(int[] array : arrays){
             int size = array.length;
@@ -94,7 +94,7 @@ public class App {
             sorter.mergeSort(array);
             return null;
         };
-        Results result = BenchMarking.medir_tiempo(funCallable1, size, "Metodo MergeSort");
+        Results result = BenchMarking.medir_tiempo("Merge Sort",funCallable1, size);
         System.out.println(result);    
         }
     }
