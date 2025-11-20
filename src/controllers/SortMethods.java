@@ -6,11 +6,11 @@ public class SortMethods {
     public void sortBubble(int[] numeros){
         int[] cp = Arrays.copyOf(numeros, numeros.length);
         for (int i = 0; i < cp.length; i++) {
-            for(int j = 0; j < cp.length; j++){
-                if(cp[i] > cp[j]){
-                    int temp = cp[i];
-                    cp[i] = cp[j];
-                    cp[j] = temp;
+            for(int j = 0; j < cp.length - 1; j++){
+                if(cp[j] > cp[j+1]){
+                    int temp = cp[j];
+                    cp[j] = cp[j+1];
+                    cp[j+1] = temp;
                 }
             }
         }

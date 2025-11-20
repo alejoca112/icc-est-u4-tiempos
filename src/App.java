@@ -6,6 +6,7 @@ import models.Results;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        System.out.println("Estudiante: Geovanny Cabrera");
         /*long inicio = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             String s = "Numero: " + i;
@@ -37,7 +38,7 @@ public class App {
         long fin_millis = System.currentTimeMillis();
         System.out.println("Tiempo transcurrido: " + (fin_millis - inicio_millis) + " nanosegundos");
         /* */
-        int[] originalArray = generate(200000);
+        int[] originalArray = generate(250000);
 
         int[] array1000 = new int[1000];
         System.arraycopy(originalArray, 0, array1000, 0, 1000);
@@ -51,11 +52,11 @@ public class App {
         int[] array100000 = new int[100000];
         System.arraycopy(originalArray, 0, array100000, 0, 100000);
 
-        int[] array180000 = new int[180000];
-        System.arraycopy(originalArray, 0, array180000, 0, 180000);
+        int[] array200000 = new int[200000];
+        System.arraycopy(originalArray, 0, array200000, 0, 200000);
 
 
-        int[][] arrays = {array1000, array5000, array10000, array100000, array180000, originalArray};
+        int[][] arrays = {array1000, array5000, array10000, array100000, array200000, originalArray};
         SortMethods sorter = new SortMethods();
         for(int[] array : arrays){
             int size = array.length;
